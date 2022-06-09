@@ -1,0 +1,307 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: 'Loyalty notification'
+servers:
+  - url: 'localhost:3000'
+paths:
+  /merchants/{merchantId}:
+    get:
+      tags:
+        - Merchant Api
+      summary: 'Get merchants by merchantId'
+      parameters:
+          - name: merchantId
+            in: path
+            required: true
+            schema:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: 'Sample response: Details about a user by ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMerchant'
+    put:
+      tags:
+        - Merchant Api
+      summary: 'Update merchants by merchantId'
+      parameters:
+          - name: merchantId
+            in: path
+            required: true
+            schema:
+                type: string
+                format: uuid
+      requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/UpdateMerchant"
+      responses:
+        '200':
+          description: 'Sample response: Details about a user by ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMerchant' 
+    delete:
+      tags:
+        - Merchant Api
+      summary: 'Delete merchants by merchantId'
+      parameters:
+          - name: merchantId
+            in: path
+            required: true
+            schema:
+                type: string
+                format: uuid
+      responses:
+        '204':
+          description: 'Delete merchant by id'
+  /merchants/{merchantId}/triggers:
+    get:
+      tags:
+        - Merchant Api
+      summary: 'Get merchant triggers'
+      parameters:
+          - name: merchantId
+            in: path
+            required: true
+            schema:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTriggers'
+    post:
+      tags:
+        - Merchant Api
+      summary: 'Create merchants trigger'
+      parameters:
+          - name: merchantId
+            in: path
+            required: true
+            schema:
+                type: string
+                format: uuid
+      requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/CreateTrigger"
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTrigger'
+  /merchants/{merchantId}/triggers/{triggerId}:
+    get:
+      tags:
+        - Merchant Api
+      summary: 'Get merchant trigger by id'
+      parameters:
+          - name: merchantId
+            in: path
+            required: true
+            schema:
+                type: string
+                format: uuid
+          - name: triggerId
+            in: path
+            required: true
+            schema:
+                type: number
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTrigger'
+    put:
+      tags:
+        - Merchant Api
+      summary: 'Update merchants trigger'
+      parameters:
+          - name: merchantId
+            in: path
+            required: true
+            schema:
+                type: string
+                format: uuid
+          - name: triggerId
+            in: path
+            required: true
+            schema:
+                type: number
+      requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/UpdateTrigger"
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTrigger'              
+  /merchants:
+    get:
+      tags:
+      - Merchant Api  
+      summary: 'Get all merchants'
+      responses:
+        '200':
+          description: 'Sample response: Details about a user by ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMerchants'       
+    post:
+        tags:
+        - Merchant Api  
+        summary: Create merchant config,
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/CreateMerchant"
+        responses:
+            '200':
+                description: 'Sample response: Details about a user by ID'
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/GetMerchant'
+components:
+  schemas:
+    TriggersType:
+      type: string
+      enum: ["REGISTRATION_CONFIRMATION", "REWARD_ASSIGNED", "REWARD_EARNED", "REWARD_EXPIRATION"]            
+    GetTriggers:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetTrigger'
+        perPage:
+          type: number
+        currentPage:
+          type:
+            number
+        totalRecords:        
+          type: number
+    GetTrigger:
+      type: object
+      properties:
+        id:
+          type: number
+        merchantId:
+          type: string
+          format: uuid
+        type:
+          type: string
+          $ref: "#/components/schemas/TriggersType"
+        email:
+          type: object
+          $ref: '#/components/schemas/TriggerEmail'
+    TriggerEmail:
+      type: object
+      properties:
+        active:
+          type: boolean
+        subject:
+          type: string
+        text:
+          type: string        
+    CreateTrigger:
+      type: object
+      required:
+        - type
+        - email
+      properties:
+        type:
+          type: string
+          $ref: "#/components/schemas/TriggersType"
+        email:
+          type: object
+          $ref: '#/components/schemas/TriggerEmail'
+    UpdateTrigger:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: object
+          $ref: '#/components/schemas/TriggerEmail'          
+    GetMerchants:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetMerchant'
+        perPage:
+          type: number
+        currentPage:
+          type:
+            number
+        totalRecords:        
+          type: number
+    GetMerchant:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        transactionalNotificationsEnabled:
+          type: boolean 
+          format: boolean
+        emailIdentity:
+          type: string
+          format: email  
+        region:
+          type: string
+          enum: ["eu-west-1"]  
+    UpdateMerchant:
+      type: object
+      required:
+        - transactionalNotificationsEnabled
+        - emailIdentity
+      properties:
+        transactionalNotificationsEnabled:
+          type: boolean 
+          format: boolean
+        emailIdentity:
+          type: string      
+    CreateMerchant:
+      type: object
+      required:
+        - transactionalNotificationsEnabled
+        - emailIdentity
+      properties:
+        transactionalNotificationsEnabled:
+          type: boolean
+        emailIdentity:
+          type: string  
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []

@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "5079ac39-3a78-4957-80ce-543733f4ff72",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "merchants",
+			"item": [
+				{
+					"name": "{merchant Id}",
+					"item": [
+						{
+							"name": "triggers",
+							"item": [
+								{
+									"name": "{trigger Id}",
+									"item": [
+										{
+											"name": "Get merchant trigger by id",
+											"id": "053ef007-49cc-454a-bce7-e0451e94df9a",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/merchants/:merchantId/triggers/:triggerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"merchants",
+														":merchantId",
+														"triggers",
+														":triggerId"
+													],
+													"variable": [
+														{
+															"id": "a08db709-614b-40cd-b680-50d4b56b17d8",
+															"key": "merchantId",
+															"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+															"description": "(Required) "
+														},
+														{
+															"id": "5a9cb816-711a-4e13-9f0d-26f316217d33",
+															"key": "triggerId",
+															"value": "15672546.811539114",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "cb4fd460-c1d4-41fa-aede-816ced158ef2",
+													"name": "response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: basic",
+																"key": "Authorization",
+																"value": "Basic <credentials>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/merchants/:merchantId/triggers/:triggerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"merchants",
+																":merchantId",
+																"triggers",
+																":triggerId"
+															],
+															"variable": [
+																{
+																	"key": "merchantId",
+																	"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "triggerId",
+																	"value": "15672546.811539114",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"id\": -34898139.562420025,\n  \"merchantId\": \"1f5a2231-cb97-5cbd-8082-5a252157de07\",\n  \"type\": \"REWARD_EXPIRATION\",\n  \"email\": {\n    \"active\": false,\n    \"subject\": \"labore consequat\",\n    \"text\": \"dolor sit quis\"\n  }\n}"
+												}
+											]
+										},
+										{
+											"name": "Update merchants trigger",
+											"id": "006afccb-aa97-41b1-8775-2e22d4d09603",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": {\n    \"active\": false,\n    \"subject\": \"nisi Ut\",\n    \"text\": \"laborum fugiat enim\"\n  }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/merchants/:merchantId/triggers/:triggerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"merchants",
+														":merchantId",
+														"triggers",
+														":triggerId"
+													],
+													"variable": [
+														{
+															"id": "517f52c8-f14a-473e-8633-71eb263b12fe",
+															"key": "merchantId",
+															"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+															"description": "(Required) "
+														},
+														{
+															"id": "7f86745c-d4e7-4a37-abc6-8d613ede6364",
+															"key": "triggerId",
+															"value": "15672546.811539114",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "c6dea326-3bea-43e7-8fa5-d35853ae62a4",
+													"name": "response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: basic",
+																"key": "Authorization",
+																"value": "Basic <credentials>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": {\n    \"active\": false,\n    \"subject\": \"nisi Ut\",\n    \"text\": \"laborum fugiat enim\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/merchants/:merchantId/triggers/:triggerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"merchants",
+																":merchantId",
+																"triggers",
+																":triggerId"
+															],
+															"variable": [
+																{
+																	"key": "merchantId",
+																	"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "triggerId",
+																	"value": "15672546.811539114",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"id\": -34898139.562420025,\n  \"merchantId\": \"1f5a2231-cb97-5cbd-8082-5a252157de07\",\n  \"type\": \"REWARD_EXPIRATION\",\n  \"email\": {\n    \"active\": false,\n    \"subject\": \"labore consequat\",\n    \"text\": \"dolor sit quis\"\n  }\n}"
+												}
+											]
+										}
+									],
+									"id": "31bdba56-38f0-4006-8f46-165094a6ddf5"
+								},
+								{
+									"name": "Create merchants trigger",
+									"id": "02d7bbfa-6923-41e1-9f33-72560168e430",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"REGISTRATION_CONFIRMATION\",\n  \"email\": {\n    \"active\": true,\n    \"subject\": \"cill\",\n    \"text\": \"labore cupidatat aliq\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/merchants/:merchantId/triggers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"merchants",
+												":merchantId",
+												"triggers"
+											],
+											"variable": [
+												{
+													"id": "0e63b330-f24e-4055-a92a-7221804e272d",
+													"key": "merchantId",
+													"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "ad7f2342-7a7f-4506-b655-c50cd075682b",
+											"name": "response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: basic",
+														"key": "Authorization",
+														"value": "Basic <credentials>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"type\": \"REGISTRATION_CONFIRMATION\",\n  \"email\": {\n    \"active\": true,\n    \"subject\": \"cill\",\n    \"text\": \"labore cupidatat aliq\"\n  }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/merchants/:merchantId/triggers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"merchants",
+														":merchantId",
+														"triggers"
+													],
+													"variable": [
+														{
+															"key": "merchantId",
+															"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"id\": -34898139.562420025,\n  \"merchantId\": \"1f5a2231-cb97-5cbd-8082-5a252157de07\",\n  \"type\": \"REWARD_EXPIRATION\",\n  \"email\": {\n    \"active\": false,\n    \"subject\": \"labore consequat\",\n    \"text\": \"dolor sit quis\"\n  }\n}"
+										}
+									]
+								}
+							],
+							"id": "fdd8f874-2d35-42a9-8ee5-cb59579c6c0e"
+						},
+						{
+							"name": "Get merchants by merchantId",
+							"id": "c91b5083-e636-42b2-94ea-de2cced2255b",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/merchants/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"merchants",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"id": "5593c837-5113-4160-9a61-4753fbd3fd9d",
+											"key": "merchantId",
+											"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "4f535f51-73d8-4498-962c-3456e6c1b41d",
+									"name": "Sample response: Details about a user by ID",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/merchants/:merchantId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"merchants",
+												":merchantId"
+											],
+											"variable": [
+												{
+													"key": "merchantId",
+													"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"5e0d04fa-7eb1-f325-3cb7-dc09386eb14c\",\n  \"transactionalNotificationsEnabled\": true,\n  \"emailIdentity\": \"EMVI5KKl0wuq@KosDBthnizDRUunqSx.uz\",\n  \"region\": \"eu-west-1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update merchants by merchantId",
+							"id": "ae89b551-2899-4744-b7ae-b3558e6b72ed",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionalNotificationsEnabled\": false,\n  \"emailIdentity\": \"con\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/merchants/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"merchants",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"id": "bccde228-2cb8-44da-a06b-aa85314df6b5",
+											"key": "merchantId",
+											"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "acca27be-4e56-4f5b-8bb3-0f5c60c7e7da",
+									"name": "Sample response: Details about a user by ID",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"transactionalNotificationsEnabled\": false,\n  \"emailIdentity\": \"con\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/merchants/:merchantId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"merchants",
+												":merchantId"
+											],
+											"variable": [
+												{
+													"key": "merchantId",
+													"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"5e0d04fa-7eb1-f325-3cb7-dc09386eb14c\",\n  \"transactionalNotificationsEnabled\": true,\n  \"emailIdentity\": \"EMVI5KKl0wuq@KosDBthnizDRUunqSx.uz\",\n  \"region\": \"eu-west-1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete merchants by merchantId",
+							"id": "df6ea218-6e4c-43e3-944a-4155a6ded874",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/merchants/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"merchants",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"id": "50b91b48-a904-4785-96c7-7aaa031402d3",
+											"key": "merchantId",
+											"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "0dd77016-580e-4a1a-97f6-e52f7ecf3711",
+									"name": "Delete merchant by id",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/merchants/:merchantId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"merchants",
+												":merchantId"
+											],
+											"variable": [
+												{
+													"key": "merchantId",
+													"value": "f10b2550-fe61-ea38-9d55-88162d4400ec",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "884195fb-4845-488f-92ce-9059c8e37de0"
+				},
+				{
+					"name": "Get all merchants",
+					"id": "b3783afa-b1de-4468-975c-f38054910472",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/merchants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"merchants"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1e368cc6-166c-4a29-ba66-1652144f671c",
+							"name": "Sample response: Details about a user by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/merchants",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"merchants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"content\": [\n    {\n      \"id\": \"0bf97f10-0c9e-b654-856b-c2c1ed15bc52\",\n      \"transactionalNotificationsEnabled\": true,\n      \"emailIdentity\": \"G2q5hjQQVy9g@ORYhStfVGTJShUIYYXBQNYZhvbzNkLS.av\",\n      \"region\": \"eu-west-1\"\n    },\n    {\n      \"id\": \"urn:uuid:9fcb0768-0dc4-2fed-cbbe-64f3f96309b0\",\n      \"transactionalNotificationsEnabled\": false,\n      \"emailIdentity\": \"sbGJr0Mhk4Df8@nGbXfnRkriouyWT.la\",\n      \"region\": \"eu-west-1\"\n    }\n  ],\n  \"perPage\": 747634.9629113227,\n  \"currentPage\": 17378798.896967724,\n  \"totalRecords\": 60097851.24475244\n}"
+						}
+					]
+				},
+				{
+					"name": "Create merchant config,",
+					"id": "82581052-7fda-4f31-b5fb-8432670886b1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"transactionalNotificationsEnabled\": false,\n  \"emailIdentity\": \"con\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/merchants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"merchants"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "91701feb-9a20-479d-845c-33a92fe8c859",
+							"name": "Sample response: Details about a user by ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"transactionalNotificationsEnabled\": false,\n  \"emailIdentity\": \"con\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/merchants",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"merchants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"5e0d04fa-7eb1-f325-3cb7-dc09386eb14c\",\n  \"transactionalNotificationsEnabled\": true,\n  \"emailIdentity\": \"EMVI5KKl0wuq@KosDBthnizDRUunqSx.uz\",\n  \"region\": \"eu-west-1\"\n}"
+						}
+					]
+				}
+			],
+			"id": "54319bd8-18f0-4674-98e9-fb5fbffc2ba6"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "<Basic Auth Username>",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "<Basic Auth Password>",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "cd6c06cf-fc92-4547-aad6-70e11bb67616",
+			"key": "baseUrl",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
